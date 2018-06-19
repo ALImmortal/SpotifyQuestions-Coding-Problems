@@ -9,29 +9,9 @@ be sortByString(s, t) = "theeraw". For s = "good" and t = "odg", the output shou
 
 using namespace std;
 
-//Function: get array for all the letters that exist in the string s but no repeats
-//Ex: s = "hello" -> getLetters(s) = {'h','e','l','o'}
-char *getLetters(string a){
-  int as=a.size();
-  char al;
-  int count=0;
-
-  for(int i=0;i<as;i++){
-    for(int j=0;j<as;j++){
-      if(a[i]==al[j]){
-          count++;
-      }
-    }
-    if(count==0){
-      al[i]==a[i];
-    }
-  }
-  
- return al; 
-}
-
 int main() {
   string s,t;
+  int i, k=0;
   int ss,ts; //Meaning "s size and t size"
 
   //Get the strings
@@ -45,13 +25,26 @@ int main() {
   //Print out the strings, making sure strings were saved correctly
   cout<<"String s = "<<s<<endl;
   ss=s.size();
+  char arrayS[ss];
+  for(i=0;i<ss;i++){
+    arrayS[i]=s[i];
+  }
+
   cout<<"String t = "<<t<<endl;
   ts=t.size();
-  int array[ts];
-
-  for(int i=0;i<ts;i++){
-      cout<<i<<endl;
+  char arrayT[ts];
+  for(i=0;i<ss;i++){
+    arrayT[i]=t[i];
   }
+
+  cout<<endl;
+
+  //Reorder string t
   
-  //cout<<getLetters(s);
+
+  //Return the new string t
+  cout<<"New String t = ";
+  for(i=0;i<ts;i++){
+    cout<<arrayT[i];
+  }
 }
