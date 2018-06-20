@@ -8,11 +8,23 @@ be sortByString(s, t) = "theeraw". For s = "good" and t = "odg", the output shou
 #include <vector>
 
 using namespace std;
+string sortByString(string a, string b){
+  string result="";
+  int as=a.size();
+  int bs=b.size();
+
+  for(int i=0;i<as;i++){
+    for(int j=0;j<bs;j++){
+      if(a[i]==b[j]){
+        result=result+b[j];
+      }
+    }
+  }
+  return result;
+}
 
 int main() {
   string s,t;
-  int i, k=0;
-  int ss,ts; //Meaning "s size and t size"
 
   //Get the strings
   cout<<"Enter string s: ";
@@ -24,27 +36,11 @@ int main() {
 
   //Print out the strings, making sure strings were saved correctly
   cout<<"String s = "<<s<<endl;
-  ss=s.size();
-  char arrayS[ss];
-  for(i=0;i<ss;i++){
-    arrayS[i]=s[i];
-  }
 
   cout<<"String t = "<<t<<endl;
-  ts=t.size();
-  char arrayT[ts];
-  for(i=0;i<ss;i++){
-    arrayT[i]=t[i];
-  }
 
   cout<<endl;
 
-  //Reorder string t
-  
-
-  //Return the new string t
-  cout<<"New String t = ";
-  for(i=0;i<ts;i++){
-    cout<<arrayT[i];
-  }
+  //Result string
+  cout<<"New String = "<<sortByString(s,t)<<endl;
 }
